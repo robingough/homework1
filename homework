@@ -1,0 +1,337 @@
+# homework1
+homework 1
+# %% [markdown]
+# To complete the homework simply fill in your answers in this jupyter notebook!
+# 
+# Remember that there are many ways in which markup cells can be used and you can add useful things such as references and images to better explain your answers.
+# 
+# It is perfectly fine if you copy your answer from somewhere else in the internet as long as you understand the code you copied and cite the source. However, refrain from asking help for your colleagues (unless you're really struggling) as the ability to find information online is crucial for any tech role you might want to have in the future.
+# 
+# <h1> Question 1: Multiple prints</h1>
+# Create 3 different variables of different types and print their values using a single print statement.
+
+# %%
+fruit="banana" 
+(print)("banana is a fruit")
+vegetable="carrot"
+(print)("carrot is a vegetable")
+protein="tofu" 
+(print)("tofu is a protein")
+
+# %% [markdown]
+# <h1> Question 2: Data structures</h1>
+# Create two variables containing each a nested list and a nested dictionary and demonstrate how to access specific items of it.
+
+# %%
+fruit=("banana", "apple", "pear")
+
+vegetable=("tomato", "potato", "celery")
+
+
+
+
+thisdict = {
+  "fruit1" : {
+    "name" : "banana",
+  },
+  "fruit2" : {
+    "name" : "apple",
+    
+  },
+  "fruit3" : {
+    "name" : "pear",
+   
+  }
+} 
+
+x = thisdict.get("fruit1")
+
+thisdict = {
+  "vegetable1" : {
+    "name" : "tomato",
+  },
+  "vegetable2" : {
+    "name" : "potato",
+    
+  },
+  "vegetable3" : {
+    "name" : "celery",
+   
+  }
+} 
+print(thisdict)
+x = thisdict.get("vegetable3")
+
+#I intially started this task indepedently, but directed myself to the following resources:
+#  https://www.w3schools.com/python/python_dictionaries.asp
+#https://www.w3schools.com/python/python_dictionaries_access.asp
+
+
+
+# %% [markdown]
+# Now consider the following list,
+
+# %%
+a_list = [1,2,3,4,5,6,7,8,9]
+a_list=[5]
+
+
+for i in range(1, 9): 
+    if i%2==0:
+        print(i)
+
+#I have read page 54 of "learn python programming", I do not understand "List Comprehension" in this context
+
+for i in range(1,9):
+    if i%3==0:
+        print(i)
+
+
+#I have no idea what I am doing here 
+print (f"1,2,3,4,5,6,7,8,9")
+
+# %% [markdown]
+# 1 - slice this list (by index) to contain only the numbers smaller than 5; <br>
+# 2 - make a loop to create a new list containing only the EVEN numbers of this list (bonus point if you use a list comprehension!!);<br>
+# 3 - make a loop to create a new list containing only the numbers that are multiples of 3;<br>
+# Bonus - make a loop that will print every item on the list inside a sentence using a f-string.
+
+# %% [markdown]
+# <h1>Question 3: Creating functions</h1>
+# 
+# Create a function that takes a list of numbers and convert them into strings. (bonus point if you use a list comprehension!!)
+
+# %%
+a=("1","2","3","4","5","6","7","8","9")
+s = ","
+
+x = s.join(a)
+
+print("a:",x)
+
+#Source: https://www.simplilearn.com/tutorials/python-tutorial/join-in-python
+
+
+
+# %%
+variable = 1
+str(variable)
+
+#I am unsure what is being asked of me here 
+
+# %%
+yet_another_list = []
+
+#I am unsure what is being asked of me here
+
+# %%
+yet_another_list
+
+#I am unsure what is being asked of me here
+
+# %%
+yet_another_list.append('cat')
+
+#I am unsure what is being asked of me 
+
+# %%
+yet_another_list
+
+#I am unsure what is being asked of me here
+
+# %%
+#To whom it may concern, 
+#I am unsure what is being asked of me to complete in these additional boxes. 
+#I have no qualms with completing this task in the future if I am provided with further instructions. 
+#Kind regards; 
+#R Gough
+
+# %%
+def numberToString(the_list):
+    another_list = []
+    
+    for item in the_list:    
+        converted_item = str(item)
+        another_list.append(converted_item)
+        
+    return(another_list)
+
+# %%
+
+
+# %%
+my_list = [1,2,3,4,5]
+
+numberToString(the_list=my_list)
+
+# %%
+new_list = [str(number) for number in my_list]
+new_list
+
+# %%
+new_list = [str(number) for number in range(10)]
+new_list
+
+# %% [markdown]
+# Create a small calculator. The function should pick two numbers and perform one of four mathematical operations with it (sum/subtraction, division, multiplication, exponents). The desired operation should be an option (hint: what IF the user wants to do a sum?)
+# 
+# Bonus: Make a function that can pick ANY number of numbers.
+
+# %%
+#addition
+def add(x, y):
+    return x + y
+
+#subtraction
+def subtract(x, y):
+    return x - y
+
+#multipication
+def multiply(x, y):
+    return x * y
+
+#division
+def divide(x, y):
+    return x / y
+
+
+print("Select operation.")
+print("1.Add")
+print("2.Subtract")
+print("3.Multiply")
+print("4.Divide")
+
+while True:
+   
+    choice = input("Enter choice(1/2/3/4/5/6/7/8/9): ")
+
+    
+    if choice in ('1', '2', '3', '4', '5', '6', '7', '8', '9'):
+        try:
+            num1 = float(input("Enter first number: "))
+            num2 = float(input("Enter second number: "))
+        except ValueError:
+            print("Invalid input. Please enter a number.")
+            continue
+
+        if choice == '1':
+            print(num1, "+", num2, "=", add(num1, num2))
+
+        elif choice == '2':
+            print(num1, "-", num2, "=", subtract(num1, num2))
+
+        elif choice == '3':
+            print(num1, "*", num2, "=", multiply(num1, num2))
+
+        elif choice == '4':
+            print(num1, "/", num2, "=", divide(num1, num2))
+        
+        # check if user wants another calculation
+        # break the while loop if answer is no
+        next_calculation = input("Let's do next calculation? (yes/no): ")
+        if next_calculation == "no":
+          break
+    else:
+        print("Invalid Input")
+
+ #source: https://www.programiz.com/python-programming/examples/calculator               
+
+# %%
+#?
+
+# %% [markdown]
+# Create a function that check if a number is within a list of numbers.
+
+# %%
+#I am unsure what this means as I have created the list for the calculator to work from? 
+
+# %% [markdown]
+# Bonus: similar to the item above, create a function that checks if a string contains a given substring, e.g. 'I have a cat' contains the string sequence 'cat' or 'ave'.
+
+# %%
+
+
+# %% [markdown]
+# Bonus: create a function that given the initial speed of a projectile that is thrown at 90 degrees will calculate how much time the projectile will take to get back to the initial altitude. (yes you're expected to disregard air resistence)
+
+# %%
+
+
+# %% [markdown]
+# <h1>solve these questions...or ELSE</h1>
+# 
+# Why the nested if statement below doesn't only produce the first print? Can you modify it so it produces the desired output?
+
+# %%
+food = 'Pizza'
+drinks = 'Beer'
+
+if food == 'Pizza' and drinks == 'Beer':
+    print('Yeeeey!')
+if food == 'Pizza' and drinks == 'Beer':
+    print('Yey.')
+if food == 'Pizza' and drinks == 'Beer':
+    print('Yey!')
+else:
+    print('.....???')
+
+# %% [markdown]
+# <h1> Debugging </h1>
+# None of the blocks of code below work. Your task is to make them work (if possible!) and add markup cells (or comments) explaining why they don't work.
+
+# %% [markdown]
+# print("Is this working?")
+
+# %%
+print("does this work?")
+
+# %%
+print("what about now")
+
+# %%
+text_variable = "Today on a scale from 1 to 10 I am feeling..."
+my_mood = 10
+print (text_variable)
+print (my_mood)
+
+# %%
+text_variable = "Today on a scale from 1 to 10 I am feeling..."
+my_mood = 10
+print ("text_variable" + "my_mood") 
+
+#Yep there are ways to make it work with a + operator too!
+
+#I am unsure how to do this 
+
+
+
+# %%
+a_dictionary = {item1: 'Value 1',
+                item2: 'value 2',}
+
+# %%
+1 == 1 # Should return True
+
+# %%
+# Why isn't the outcome 'Clap your hands?'
+mood = 'happy'
+if mood == 'happy':
+    print('Clap your hands')
+else:
+    print('...do I look like I have this one figured out?')
+
+# %%
+def printerfunction(x,y):
+    print(x,y)
+
+printerfunction("a word", "another word")
+
+# %%
+# bonus/annoying round, why is this crashing?
+mood = 'happy'
+if mood == 'happy':
+   print('Clap your hands')
+else:
+    print('...do I look like I have this one figured out?')
+
+
